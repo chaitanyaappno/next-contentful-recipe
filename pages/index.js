@@ -35,7 +35,7 @@ export default function Home({ recipes }) {
           {" "}
           
           {recipes?.map((recipe) => (
-            <RecipeCard recipe={recipe} />
+            <RecipeCard recipe={recipe} key={recipe.sys.id}/>
           ))}
         </Grid>
 
