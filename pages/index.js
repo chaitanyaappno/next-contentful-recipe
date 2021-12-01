@@ -18,6 +18,7 @@ export const getStaticProps = async () => {
   return {
     props: {
       recipes: res.items,
+      revalidate: 1,
     },
   };
 };
@@ -33,9 +34,8 @@ export default function Home({ recipes }) {
         <h1 className={styles.title}> Indian Recipe </h1>
         <Grid sx={{ flexGrow: 1 }} container spacing={4}>
           {" "}
-          
           {recipes?.map((recipe) => (
-            <RecipeCard recipe={recipe} key={recipe.sys.id}/>
+            <RecipeCard recipe={recipe} key={recipe.sys.id} />
           ))}
         </Grid>
 
